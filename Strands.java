@@ -1,5 +1,7 @@
 public class Strands 
 {
+    public static int spaces_sequence[] = {2, 2, 2, 3, 4, 5, 5, 5, 4, 3};
+    public static int spaces_index = 0;
 
     // Hours spent on the assignment.
     public static double hoursSpent() 
@@ -68,25 +70,30 @@ public class Strands
 
     }
 
+    public static int getNumOfSpaces()
+    {
+        int n = 0;
+
+        if (spaces_index == 0)
+        {
+            n = 3;
+            spaces_index += 1;
+        }
+        else
+        {
+            n = spaces_sequence[spaces_index - 1];
+        }
+
+        return n;
+    }
+
     public static void meanderingPath(String str) 
     {
-        int spaces_sequence[] = {2, 2, 2, 3, 4, 5, 5, 5, 4, 3};
-
         int len = str.length();
 
-        for(int i = 0, spaces_index = 0; i < len; i++)
+        for(int i = 0; i < len; i++, spaces_index++)
         {
-            int j = 0;
-
-            if (spaces_index == 0)
-            {
-                j = 3;
-                spaces_index += 1;
-            }
-            else
-            {
-                j = spaces_sequence[spaces_index - 1];
-            }
+            int j = getNumOfSpaces();
             
             if(str.charAt(i) == ' ') 
             {
@@ -100,15 +107,12 @@ public class Strands
                 }
 
                 System.out.println(str.charAt(i));
-
             }
 
             if(spaces_index == 10)
             {
                 spaces_index = 0;
             }
-
-            spaces_index++;
         }
     }
 
@@ -117,11 +121,16 @@ public class Strands
         int s2Len = strings[1].length();
         int s3Len = strings[2].length();
 
-        int spaces_sequence[] = {2, 2, 2, 3, 4, 5, 5, 5, 4, 3};
-
-        for(int i = 0; i < s1Len || i < s2Len || i < s3Len; i++)
+        for(int i = 0, spaces_index = 0; i < s1Len || i < s2Len || i < s3Len; i++, spaces_index++)
         {
+            int j = getNumOfSpaces();
             
+            // Add more code related 
+
+            if(spaces_index == 10)
+            {
+                spaces_index = 0;
+            }
         }
     }
 
