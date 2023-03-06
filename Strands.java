@@ -18,7 +18,7 @@ public class Strands
     // This method takes a string and prints it out, one character per line, with two spaces in front of each character.
     public static void straightAndNarrow(String str) 
     {
-
+        // Found a way to use DRY Principle using this function by calling the next function, come back to it later to change it.
         if(str == null || str.length() == 0) 
         {
             System.out.println("Pshh!");
